@@ -24,6 +24,7 @@ class TodoCubit extends Cubit<TodoState> {
   Future<void> deleteTodo(id) async {
     try {
       await todoRepository.removeTodo(id);
+      fetchTodo();
     } catch (e) {
       emit(TodoLoadingError(e.toString()));
     }

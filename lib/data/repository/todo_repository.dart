@@ -21,6 +21,5 @@ class TodoRepository {
 
   Future<void> removeTodo(id) async {
     await dio.delete('http://10.0.2.2:8080/delete-todo/${id}');
-    fetchTodos();
   }
 }
